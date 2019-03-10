@@ -11,7 +11,7 @@ Example of script launch on Linux, Python 3.5:
 
 ```bash
 
-$ python pprint_json.py akco_shops.json
+$ python pprint_json.py alco_shops.json
 {
     "geometry": {
         "coordinates": [
