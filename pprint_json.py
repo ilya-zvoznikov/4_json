@@ -1,6 +1,5 @@
 import json
 import sys
-import os
 
 
 def load_data(filepath):
@@ -8,20 +7,19 @@ def load_data(filepath):
         return json.load(file_handler)
 
 
-def pretty_print_json(data_dict):
-    print(json.dumps(data_dict, ensure_ascii=False, indent=4))
+def pretty_print_json(data_object):
+    print(json.dumps(data_object, ensure_ascii=False, indent=4))
 
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         filepath = sys.argv[1]
     else:
-        print('Не указан путь к файлу')
-        sys.exit()
+        sys.exit('Не указан путь к файлу')
 
     try:
-        data_dict = load_data(filepath)
-        pretty_print_json(data_dict)
+        data_object = load_data(filepath)
+        pretty_print_json(data_object)
     except FileNotFoundError:
         print('Файл не найден')
     except json.decoder.JSONDecodeError:
